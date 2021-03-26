@@ -1,19 +1,19 @@
-#include<iostream>//header file
+#include<iostream>		//header file
 using namespace std;
 void matrixAddition ();
 void matrixSubtraction ();
 void addScalar ();
 void subtractScalar ();
-void multiplyScalar ();//functions definitions
+void multiplyScalar ();		//functions definitions
 void divideScalar ();
 void transponseMatrix ();
 int checkEquality ();
 int checkSymmetry ();
 int checkIdentity ();
-int matrixMultiplication();
+int matrixMultiplication ();
 int scalar, i, j, k;
 int
-main () //main method
+main ()				//main method
 {
   int dec;
   while (1)
@@ -25,14 +25,14 @@ main () //main method
       cout << "5:Press 5 to add two matrices:\n";
       cout << "6:Press 6 to subtract two matrices:\n";
       cout << "7:Press 7 to find transpose of matrix:\n";
-      cout << "8:Press 8 to check symmetry of matrix:\n";                //menu printing
+      cout << "8:Press 8 to check symmetry of matrix:\n";	//menu printing
       cout << "9:Press 9 to check equality of matrices:\n";
       cout << "10:Press 10 to check identity of matrices:\n";
       cout << "11:Press 11 to find multiplication of matrices:\n";
       cout << "0:Press 0 to  exit the program:\n";
       cout << "Enter your choice:\t";
       cin >> dec;
-      switch (dec)                           //switch  statement
+      switch (dec)		//switch  statement
 	{
 	case 1:
 	  {
@@ -64,7 +64,7 @@ main () //main method
 	    matrixSubtraction ();
 	    break;
 	  }
-	case 7:                                      //  cases
+	case 7:		//  cases
 	  {
 	    transponseMatrix ();
 	    break;
@@ -84,11 +84,11 @@ main () //main method
 	    checkIdentity ();
 	    break;
 	  }
-  case 11:
-   {
-    matrixMultiplication();
-    break;
-   }
+	case 11:
+	  {
+	    matrixMultiplication ();
+	    break;
+	  }
 	case 0:
 	  {
 	    system ("pause");
@@ -103,18 +103,18 @@ main () //main method
     }
 
 
-  system ("pause");                                               //exiting the program
+  system ("pause");		//exiting the program
   return 0;
 }
 
 void
-addScalar ()                                             //This method add a scalar number in a matrix
+addScalar ()			//This method add a scalar number in a matrix
 {
   int rows = 0;
   int columns = 0;
   cout << "Enter the number of rows:\t";
   cin >> rows;
-  if (rows <= 0)                                   //checking validity
+  if (rows <= 0)		//checking validity
     {
       cout << "Invalid number\n";
     }
@@ -124,14 +124,14 @@ addScalar ()                                             //This method add a sca
     {
       cout << "Invalid operation\n";
     }
-  int array[rows][columns];                      //array decleration
+  int array[rows][columns];	//array decleration
   for (i = 0; i < rows; i++)
     {
       cout << "Row:\t" << i << "\n";
       for (j = 0; j < columns; j++)
 	{
 	  cout << "Enter the number:\t";
-	  cin >> array[i][j];                           //getting the values from the user and save it in the array
+	  cin >> array[i][j];	//getting the values from the user and save it in the array
 	}
 
     }
@@ -139,7 +139,7 @@ addScalar ()                                             //This method add a sca
     {
       for (j = 0; j < columns; j++)
 	{
-	  cout << array[i][j] << "\t";                     //displaying the values 
+	  cout << array[i][j] << "\t";	//displaying the values 
 	}
       cout << "\n";
     }
@@ -153,7 +153,7 @@ addScalar ()                                             //This method add a sca
     {
       for (j = 0; j < columns; j++)
 	{
-	  array[i][j] = array[i][j] + scalar;                 //adding the scalar in matrix array
+	  array[i][j] = array[i][j] + scalar;	//adding the scalar in matrix array
 	}
 
     }
@@ -169,30 +169,30 @@ addScalar ()                                             //This method add a sca
 }
 
 void
-subtractScalar ()                                             // This method subtract a scalar from the matrix 
+subtractScalar ()		// This method subtract a scalar from the matrix 
 {
   int rows = 0;
   int columns = 0;
-  cout << "Enter the number of rows:\t";                         //getting rows 
+  cout << "Enter the number of rows:\t";	//getting rows 
   cin >> rows;
   if (rows <= 0)
     {
       cout << "Invalid number\n";
     }
   cout << "Enter the number of columns:\t";
-  cin >> columns;                                                      //getting columns
+  cin >> columns;		//getting columns
   if (columns <= 0)
     {
       cout << "Invalid operation\n";
     }
-  int array[rows][columns];                                         //array decleration
+  int array[rows][columns];	//array decleration
   for (i = 0; i < rows; i++)
     {
       cout << "Row:\t" << i << "\n";
       for (j = 0; j < columns; j++)
 	{
 	  cout << "Enter the number:\t";
-	  cin >> array[i][j];                                            // storing values in array
+	  cin >> array[i][j];	// storing values in array
 	}
 
     }
@@ -205,7 +205,7 @@ subtractScalar ()                                             // This method sub
       cout << "\n";
     }
   cout << "Enter the scalar you want to subtract:\t";
-  cin >> scalar;                                                                 //getting the scalar
+  cin >> scalar;		//getting the scalar
   if (scalar < 0)
     {
       cout << "Invalid Input\n";
@@ -214,7 +214,7 @@ subtractScalar ()                                             // This method sub
     {
       for (j = 0; j < columns; j++)
 	{
-	  array[i][j] = array[i][j] - scalar;                         //subtracting the scalar from the matrix
+	  array[i][j] = array[i][j] - scalar;	//subtracting the scalar from the matrix
 	}
 
     }
@@ -223,7 +223,7 @@ subtractScalar ()                                             // This method sub
     {
       for (j = 0; j < columns; j++)
 	{
-	  cout << array[i][j] << "\t";                                          //displaying the output
+	  cout << array[i][j] << "\t";	//displaying the output
 	}
       cout << "\n";
     }
@@ -231,7 +231,7 @@ subtractScalar ()                                             // This method sub
 }
 
 void
-multiplyScalar ()                                                        //This method multiply the scalar with the matrix
+multiplyScalar ()		//This method multiply the scalar with the matrix
 {
   int rows = 0;
   int columns = 0;
@@ -267,7 +267,7 @@ multiplyScalar ()                                                        //This 
       cout << "\n";
     }
   cout << "Enter the scalar you want to multiply:\t";
-  cin >> scalar;                                                      //getting the scalar 
+  cin >> scalar;		//getting the scalar 
   if (scalar < 0)
     {
       cout << "Invalid Input\n";
@@ -276,7 +276,7 @@ multiplyScalar ()                                                        //This 
     {
       for (j = 0; j < columns; j++)
 	{
-	  array[i][j] = array[i][j] * scalar;                                 //multiplying it with the matrix
+	  array[i][j] = array[i][j] * scalar;	//multiplying it with the matrix
 	}
 
     }
@@ -285,7 +285,7 @@ multiplyScalar ()                                                        //This 
     {
       for (j = 0; j < columns; j++)
 	{
-	  cout << array[i][j] << "\t";                                         //displaying the result
+	  cout << array[i][j] << "\t";	//displaying the result
 	}
       cout << "\n";
     }
@@ -293,7 +293,7 @@ multiplyScalar ()                                                        //This 
 }
 
 void
-divideScalar ()                                                                  //This function divide the scalar with the matrix
+divideScalar ()			//This function divide the scalar with the matrix
 {
   int rows = 0;
   int columns = 0;
@@ -309,7 +309,7 @@ divideScalar ()                                                                 
     {
       cout << "Invalid operation\n";
     }
-  int array[rows][columns];           
+  int array[rows][columns];
   for (i = 0; i < rows; i++)
     {
       cout << "Row:\t" << i << "\n";
@@ -338,7 +338,7 @@ divideScalar ()                                                                 
     {
       for (j = 0; j < columns; j++)
 	{
-	  array[i][j] = array[i][j] / scalar;                                        //dividing the scalar with matrix
+	  array[i][j] = array[i][j] / scalar;	//dividing the scalar with matrix
 	}
 
     }
@@ -348,19 +348,19 @@ divideScalar ()                                                                 
       for (j = 0; j < columns; j++)
 	{
 	  cout << array[i][j] << "\t";
-	}                                                                                        //displaying the results
+	}			//displaying the results
       cout << "\n";
     }
 
 }
 
 void
-matrixAddition ()                            //This method add the two matrices
+matrixAddition ()		//This method add the two matrices
 {
-  int rows = 0;         //rows of first matrix
-  int columns = 0;         //columns of first matrix
-  int rows1 = 0;             //rows of second matrix
-  int columns1 = 0;                                //columns of second matrix
+  int rows = 0;			//rows of first matrix
+  int columns = 0;		//columns of first matrix
+  int rows1 = 0;		//rows of second matrix
+  int columns1 = 0;		//columns of second matrix
   cout << "Enter the number of rows:\t";
   cin >> rows;
   if (rows <= 0)
@@ -368,12 +368,12 @@ matrixAddition ()                            //This method add the two matrices
       cout << "Invalid number\n";
     }
   cout << "Enter the number of columns:\t";
-  cin >> columns;                                              //getting rows and column of first matrix
+  cin >> columns;		//getting rows and column of first matrix
   if (columns <= 0)
     {
       cout << "Invalid operation\n";
     }
-  int array[rows][columns];                                        //array for the first matrix
+  int array[rows][columns];	//array for the first matrix
   for (i = 0; i < rows; i++)
     {
       cout << "Row:\t" << i << "\n";
@@ -390,19 +390,19 @@ matrixAddition ()                            //This method add the two matrices
     {
       cout << "Invalid number\n";
     }
-  cout << "Enter the number of columns for second matrix:\t";                              //getting rows and columns for second matrix
+  cout << "Enter the number of columns for second matrix:\t";	//getting rows and columns for second matrix
   cin >> columns1;
   if (columns1 <= 0)
     {
       cout << "Invalid operation\n";
     }
-  int array1[rows1][columns1];                                                 //array for the second matrix
+  int array1[rows1][columns1];	//array for the second matrix
   for (i = 0; i < rows1; i++)
     {
       cout << "Row-2:\t" << i << "\n";
       for (j = 0; j < columns1; j++)
 	{
-	  cout << "Enter the number:\t";                                 //getting the numbers for second matrix
+	  cout << "Enter the number:\t";	//getting the numbers for second matrix
 	  cin >> array1[i][j];
 	}
     }
@@ -411,7 +411,7 @@ matrixAddition ()                            //This method add the two matrices
     {
       for (j = 0; j < columns; j++)
 	{
-	  cout << array[i][j] << "\t";                                   //displaying first matrix
+	  cout << array[i][j] << "\t";	//displaying first matrix
 	}
       cout << "\n";
     }
@@ -421,17 +421,17 @@ matrixAddition ()                            //This method add the two matrices
     {
       for (j = 0; j < columns1; j++)
 	{
-	  cout << array1[i][j] << "\t";                                  //displaying second matrix
+	  cout << array1[i][j] << "\t";	//displaying second matrix
 	}
       cout << "\n";
     }
-  int sum[i][j];                                                //array for storing the sum 
+  int sum[i][j];		//array for storing the sum 
 
   for (i = 0; i < rows; i++)
     {
       for (j = 0; j < columns; j++)
 	{
-	  sum[i][j] = array[i][j] + array1[i][j];                        //performing addition of matrices
+	  sum[i][j] = array[i][j] + array1[i][j];	//performing addition of matrices
 	}
 
     }
@@ -442,7 +442,7 @@ matrixAddition ()                            //This method add the two matrices
 	{
 	  for (j = 0; j < columns; j++)
 	    {
-	      cout << sum[i][j] << "\t";                                       //displaying the sum 
+	      cout << sum[i][j] << "\t";	//displaying the sum 
 	    }
 	  cout << "\n";
 	}
@@ -459,7 +459,7 @@ matrixAddition ()                            //This method add the two matrices
 
 
 void
-matrixSubtraction ()                                 //This function perform subtraction of two matrices
+matrixSubtraction ()		//This function perform subtraction of two matrices
 {
   int rows = 0;
   int columns = 0;
@@ -471,20 +471,20 @@ matrixSubtraction ()                                 //This function perform sub
     {
       cout << "Invalid number\n";
     }
-  cout << "Enter the number of columns:\t";                                 //getting rows and columns of first matrix
+  cout << "Enter the number of columns:\t";	//getting rows and columns of first matrix
   cin >> columns;
   if (columns <= 0)
     {
       cout << "Invalid operation\n";
     }
-  int array[rows][columns];                                              //array for the first matrix
+  int array[rows][columns];	//array for the first matrix
   for (i = 0; i < rows; i++)
     {
       cout << "Row:\t" << i << "\n";
       for (j = 0; j < columns; j++)
 	{
 	  cout << "Enter the number:\t";
-	  cin >> array[i][j];                                             //getting the values for first matrix
+	  cin >> array[i][j];	//getting the values for first matrix
 	}
     }
   cout << "For subtraction of two matrices we need another matrix:\n";
@@ -494,20 +494,20 @@ matrixSubtraction ()                                 //This function perform sub
     {
       cout << "Invalid number\n";
     }
-  cout << "Enter the number of columns for second matrix:\t";                                 // ]---  Getting rows and columns of second matrix
+  cout << "Enter the number of columns for second matrix:\t";	// ]---  Getting rows and columns of second matrix
   cin >> columns1;
   if (columns1 <= 0)
     {
       cout << "Invalid operation\n";
     }
-  int array1[rows1][columns1];                                                    //array for the second matrix
+  int array1[rows1][columns1];	//array for the second matrix
   for (i = 0; i < rows1; i++)
     {
       cout << "Row-2:\t" << i << "\n";
       for (j = 0; j < columns1; j++)
 	{
 	  cout << "Enter the number:\t";
-	  cin >> array1[i][j];                                //getting values 
+	  cin >> array1[i][j];	//getting values 
 	}
     }
   cout << "First Matrix:\n";
@@ -520,7 +520,7 @@ matrixSubtraction ()                                 //This function perform sub
       cout << "\n";
     }
 
-  cout << "Second Matrix:\n";                                    //]---Displaying both matrices
+  cout << "Second Matrix:\n";	//]---Displaying both matrices
   for (i = 0; i < rows1; i++)
     {
       for (j = 0; j < columns1; j++)
@@ -529,13 +529,13 @@ matrixSubtraction ()                                 //This function perform sub
 	}
       cout << "\n";
     }
-  int subt[i][j];                                      //Array for storing the difference of matrices
+  int subt[i][j];		//Array for storing the difference of matrices
 
   for (i = 0; i < rows; i++)
     {
       for (j = 0; j < columns; j++)
 	{
-	  subt[i][j] = array[i][j] - array1[i][j];                         //array Subtraction
+	  subt[i][j] = array[i][j] - array1[i][j];	//array Subtraction
 	}
 
     }
@@ -546,9 +546,9 @@ matrixSubtraction ()                                 //This function perform sub
 	{
 	  for (j = 0; j < columns; j++)
 	    {
-	      cout << subt[i][j] << "\t";                                         //]---Displaying the Difference/Subtraction
+	      cout << subt[i][j] << "\t";	//]---Displaying the Difference/Subtraction
 	    }
-	  cout << "\n";                                              
+	  cout << "\n";
 	}
     }
   else
@@ -561,7 +561,7 @@ matrixSubtraction ()                                 //This function perform sub
 }
 
 void
-transponseMatrix ()                            //This method/function finds the transponse of matrix
+transponseMatrix ()		//This method/function finds the transponse of matrix
 {
   int rows = 0;
   int columns = 0;
@@ -573,7 +573,7 @@ transponseMatrix ()                            //This method/function finds the 
     }
   cout << "Enter the number of columns:\t";
   cin >> columns;
-  if (columns <= 0)                                     //]----Getting rows and columns of the matrix
+  if (columns <= 0)		//]----Getting rows and columns of the matrix
     {
       cout << "Invalid operation\n";
     }
@@ -584,7 +584,7 @@ transponseMatrix ()                            //This method/function finds the 
       for (j = 0; j < columns; j++)
 	{
 	  cout << "Enter the number:\t";
-	  cin >> array[i][j];                    //----Getting the values----------
+	  cin >> array[i][j];	//----Getting the values----------
 	}
 
     }
@@ -592,26 +592,26 @@ transponseMatrix ()                            //This method/function finds the 
     {
       for (j = 0; j < columns; j++)
 	{
-	  cout << array[i][j] << "\t";                 //-----------Displaying the matrix----------
+	  cout << array[i][j] << "\t";	//-----------Displaying the matrix----------
 	}
       cout << "\n";
     }
-  int transpose[j][i];                             //array for storing the transponse 
+  int transpose[j][i];		//array for storing the transponse 
   for (i = 0; i < rows; i++)
     {
       for (j = 0; j < columns; j++)
 	{
-	  transpose[j][i] = array[i][j];                  //shifting the rows into columns
+	  transpose[j][i] = array[i][j];	//shifting the rows into columns
 
 	}
 
     }
   cout << "Transpose of Matrix is:\n";
-  for (i = 0; i < columns; i++)                        //--We do so because we shifted the columns with rows
+  for (i = 0; i < columns; i++)	//--We do so because we shifted the columns with rows
     {
       for (j = 0; j < rows; j++)
 	{
-	  cout << transpose[i][j] << "\t";                            //-----Displaying the transponse
+	  cout << transpose[i][j] << "\t";	//-----Displaying the transponse
 	}
       cout << "\n";
     }
@@ -620,7 +620,7 @@ transponseMatrix ()                            //This method/function finds the 
 }
 
 int
-checkSymmetry ()                                                        //This function checks the symmetry of matrix
+checkSymmetry ()		//This function checks the symmetry of matrix
 {
   int rows = 0;
   int columns = 0;
@@ -631,20 +631,20 @@ checkSymmetry ()                                                        //This f
     {
       cout << "Invalid number\n";
     }
-  cout << "Enter the number of columns:\t";                      //]---Getting the rows and columns 
+  cout << "Enter the number of columns:\t";	//]---Getting the rows and columns 
   cin >> columns;
   if (columns <= 0)
     {
       cout << "Invalid operation\n";
     }
-  int array[rows][columns];                                                 
+  int array[rows][columns];
   for (i = 0; i < rows; i++)
     {
       cout << "Row:\t" << i << "\n";
       for (j = 0; j < columns; j++)
 	{
 	  cout << "Enter the number:\t";
-	  cin >> array[i][j];                                        //getting the values
+	  cin >> array[i][j];	//getting the values
 	}
 
     }
@@ -652,11 +652,11 @@ checkSymmetry ()                                                        //This f
     {
       for (j = 0; j < columns; j++)
 	{
-	  cout << array[i][j] << "\t";                              //printing the matrix
+	  cout << array[i][j] << "\t";	//printing the matrix
 	}
       cout << "\n";
     }
-  int transpose[j][i];                                          //getting the transponse of matrix
+  int transpose[j][i];		//getting the transponse of matrix
   for (i = 0; i < rows; i++)
     {
       for (j = 0; j < columns; j++)
@@ -671,7 +671,7 @@ checkSymmetry ()                                                        //This f
     {
       for (j = 0; j < rows; j++)
 	{
-	  cout << transpose[i][j] << "\t";                            //Printing the transponse
+	  cout << transpose[i][j] << "\t";	//Printing the transponse
 	}
       cout << "\n";
     }
@@ -679,7 +679,7 @@ checkSymmetry ()                                                        //This f
     {
       for (j = 0; j < columns; j++)
 	{
-	  if (array[i][j] != transpose[i][j])                      //comparing the matrix with its transponse
+	  if (array[i][j] != transpose[i][j])	//comparing the matrix with its transponse
 	    {
 	      cout << "It is not a symmetric matrix.\n";
 	      return 0;
@@ -693,7 +693,7 @@ checkSymmetry ()                                                        //This f
 }
 
 int
-checkEquality ()                                            //This function checks the equality of matrices
+checkEquality ()		//This function checks the equality of matrices
 {
   int rows = 0;
   int columns = 0;
@@ -706,7 +706,7 @@ checkEquality ()                                            //This function chec
       cout << "Invalid number\n";
     }
   cout << "Enter the number of columns:\t";
-  cin >> columns;                                                                                     //Getting the rows and columns of first matrix
+  cin >> columns;		//Getting the rows and columns of first matrix
   if (columns <= 0)
     {
       cout << "Invalid operation\n";
@@ -729,7 +729,7 @@ checkEquality ()                                            //This function chec
       cout << "Invalid number\n";
     }
   cout << "Enter the number of columns for second matrix:\t";
-  cin >> columns1;                                                   //Getting rows and columns for second matrix
+  cin >> columns1;		//Getting rows and columns for second matrix
   if (columns1 <= 0)
     {
       cout << "Invalid operation\n";
@@ -751,9 +751,9 @@ checkEquality ()                                            //This function chec
 	{
 	  cout << array[i][j] << "\t";
 	}
-      cout << "\n";                                     //]---------------Printing the both matrices-------
+      cout << "\n";		//]---------------Printing the both matrices-------
     }
-                                                        
+
   cout << "Second Matrix:\n";
   for (i = 0; i < rows1; i++)
     {
@@ -767,7 +767,7 @@ checkEquality ()                                            //This function chec
     {
       for (j = 0; j < columns; j++)
 	{
-	  if (array[i][j] != array1[i][j])                                    //comparing the both matrices
+	  if (array[i][j] != array1[i][j])	//comparing the both matrices
 	    {
 	      cout << "Matrices are not equal.\n";
 	      return 0;
@@ -782,7 +782,7 @@ checkEquality ()                                            //This function chec
 }
 
 int
-checkIdentity ()                                     //This method checks whether the matrix is identitiy or not
+checkIdentity ()		//This method checks whether the matrix is identitiy or not
 {
   int rows = 0;
   int columns = 0;
@@ -794,7 +794,7 @@ checkIdentity ()                                     //This method checks whethe
     {
       cout << "Invalid number\n";
     }
-  cout << "Enter the number of columns:\t";                             //Getting the rows and columns of matrix
+  cout << "Enter the number of columns:\t";	//Getting the rows and columns of matrix
   cin >> columns;
   if (columns <= 0)
     {
@@ -818,18 +818,21 @@ checkIdentity ()                                     //This method checks whethe
 	}
       cout << "\n";
     }
-  rows1 = rows;                         //storing the rows of first matrix in the sample identity
-  columns1 = columns;                       //storing the columns of first matrix in the sample identity
+  rows1 = rows;			//storing the rows of first matrix in the sample identity
+  columns1 = columns;		//storing the columns of first matrix in the sample identity
   int identity[i][j];
   for (i = 0; i < rows1; i++)
     {
       for (j = 0; j < columns1; j++)
 	{
-	 if(i==j){
-     identity[i][j]=1;                    //conditions for the sample identity matrix
-   }else{
-     identity[i][j]=0;
-   }
+	  if (i == j)
+	    {
+	      identity[i][j] = 1;	//conditions for the sample identity matrix
+	    }
+	  else
+	    {
+	      identity[i][j] = 0;
+	    }
 	}
 
     }
@@ -837,7 +840,7 @@ checkIdentity ()                                     //This method checks whethe
     {
       for (j = 0; j < columns; j++)
 	{
-	  if (array[i][j] != identity[i][j])                       //comparing the matrix given by the user with the sample identity matrix
+	  if (array[i][j] != identity[i][j])	//comparing the matrix given by the user with the sample identity matrix
 	    {
 	      cout << "It is not an identity matrix\n";
 	      return 0;
@@ -847,8 +850,9 @@ checkIdentity ()                                     //This method checks whethe
   cout << "It is an identity matrix\n";
 
 }
+
 int
-matrixMultiplication()                                            //this function find the product of two matrices
+matrixMultiplication ()		//this function find the product of two matrices
 {
   int rows = 0;
   int columns = 0;
@@ -862,7 +866,7 @@ matrixMultiplication()                                            //this functio
       cout << "Invalid number\n";
     }
   cout << "Enter the number of columns:\t";
-  cin >> columns;                                                  //]------Getting the rows and columns of first matrix
+  cin >> columns;		//]------Getting the rows and columns of first matrix
   if (columns <= 0)
     {
       cout << "Invalid operation\n";
@@ -874,7 +878,7 @@ matrixMultiplication()                                            //this functio
       for (j = 0; j < columns; j++)
 	{
 	  cout << "Enter the number:\t";
-	  cin >> array[i][j];                                           //------------Getting the values--------
+	  cin >> array[i][j];	//------------Getting the values--------
 	}
     }
   cout << "For multiplication of two matrices we need another matrix:\n";
@@ -884,7 +888,7 @@ matrixMultiplication()                                            //this functio
     {
       cout << "Invalid number\n";
     }
-  cout << "Enter the number of columns for second matrix:\t";                                  //------]--Getting the rows and columns of second matrix
+  cout << "Enter the number of columns for second matrix:\t";	//------]--Getting the rows and columns of second matrix
   cin >> columns1;
   if (columns1 <= 0)
     {
@@ -897,7 +901,7 @@ matrixMultiplication()                                            //this functio
       for (j = 0; j < columns1; j++)
 	{
 	  cout << "Enter the number:\t";
-	  cin >> array1[i][j];                                     //Getting the values
+	  cin >> array1[i][j];	//Getting the values
 	}
     }
   cout << "First Matrix:\n";
@@ -911,7 +915,7 @@ matrixMultiplication()                                            //this functio
     }
 
   cout << "Second Matrix:\n";
-  for (i = 0; i < rows1; i++)                             //----]----Printing both matrices---------
+  for (i = 0; i < rows1; i++)	//----]----Printing both matrices---------
     {
       for (j = 0; j < columns1; j++)
 	{
@@ -919,41 +923,45 @@ matrixMultiplication()                                            //this functio
 	}
       cout << "\n";
     }
-  int mult[i][j]={};                                  //---------initializing the array with 0 to avoid dummy values
-  for ( i = 0; i < rows; i++)
-  {
-    for ( j = 0; j < columns; j++)
+  int mult[i][j] = { };		//---------initializing the array with 0 to avoid dummy values
+  for (i = 0; i < rows; i++)
     {
-     for ( k = 0; k < rows; k++)
-     {
-      
-	  
-	   if(columns == rows1 || rows==columns1){                            //checking the conditions
-        mult[i][j] = mult[i][j] + array[i][k] * array1 [k][j];           //multiplication of matrices
-       }else{
-         cout<<"Can not perform your operation.";
-         cout<<"For multiplication of matrices,rows of first matrix must be equal to columns of second matrix.\t";
-         return 0;
-       }
-     }
-     
-    }
-    
-  }
+      for (j = 0; j < columns; j++)
+	{
+	  for (k = 0; k < rows; k++)
+	    {
 
-  cout<<"After Multiplication:\n";
-  for ( i = 0; i < rows; i++)
-  {
-   for ( j = 0; j < columns; j++)
-   {
-    cout<<mult[i][j]<<"\t";                            //--------]-----Displaying the result------
-   }
-   cout<<"\n";
-   
-  }//                       -----------------------------------------------------------End of the Program---------------------------------------------------------------------------------
-        
-     
-  
+
+	      if (columns == rows1 || rows == columns1)
+		{		//checking the conditions
+		  mult[i][j] = mult[i][j] + array[i][k] * array1[k][j];	//multiplication of matrices
+		}
+	      else
+		{
+		  cout << "Can not perform your operation.";
+		  cout <<
+		    "For multiplication of matrices,rows of first matrix must be equal to columns of second matrix.\t";
+		  return 0;
+		}
+	    }
+
+	}
+
+    }
+
+  cout << "After Multiplication:\n";
+  for (i = 0; i < rows; i++)
+    {
+      for (j = 0; j < columns; j++)
+	{
+	  cout << mult[i][j] << "\t";	//--------]-----Displaying the result------
+	}
+      cout << "\n";
+
+    }				//                       -----------------------------------------------------------End of the Program---------------------------------------------------------------------------------
+
+
+
 
 
 }
