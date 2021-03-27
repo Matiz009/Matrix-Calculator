@@ -7,10 +7,10 @@ void subtractScalar ();
 void multiplyScalar ();		//functions definitions
 void divideScalar ();
 void transponseMatrix ();
-int checkEquality ();
-int checkSymmetry ();
-int checkIdentity ();
-int matrixMultiplication ();
+void checkEquality ();
+void checkSymmetry ();
+void checkIdentity ();
+void matrixMultiplication ();
 int scalar, i, j, k;
 int
 main ()				//main method
@@ -117,12 +117,14 @@ addScalar ()			//This method add a scalar number in a matrix
   if (rows <= 0)		//checking validity
     {
       cout << "Invalid number\n";
+      return;
     }
   cout << "Enter the number of columns:\t";
   cin >> columns;
   if (columns <= 0)
     {
       cout << "Invalid operation\n";
+      return;
     }
   int array[rows][columns];	//array decleration
   for (i = 0; i < rows; i++)
@@ -148,6 +150,7 @@ addScalar ()			//This method add a scalar number in a matrix
   if (scalar < 0)
     {
       cout << "Invalid Input\n";
+      return;
     }
   for (i = 0; i < rows; i++)
     {
@@ -178,12 +181,14 @@ subtractScalar ()		// This method subtract a scalar from the matrix
   if (rows <= 0)
     {
       cout << "Invalid number\n";
+      return;
     }
   cout << "Enter the number of columns:\t";
   cin >> columns;		//getting columns
   if (columns <= 0)
     {
       cout << "Invalid operation\n";
+      return;
     }
   int array[rows][columns];	//array decleration
   for (i = 0; i < rows; i++)
@@ -209,6 +214,7 @@ subtractScalar ()		// This method subtract a scalar from the matrix
   if (scalar < 0)
     {
       cout << "Invalid Input\n";
+      return;
     }
   for (i = 0; i < rows; i++)
     {
@@ -240,12 +246,14 @@ multiplyScalar ()		//This method multiply the scalar with the matrix
   if (rows <= 0)
     {
       cout << "Invalid number\n";
+      return;
     }
   cout << "Enter the number of columns:\t";
   cin >> columns;
   if (columns <= 0)
     {
       cout << "Invalid operation\n";
+      return;
     }
   int array[rows][columns];
   for (i = 0; i < rows; i++)
@@ -271,6 +279,7 @@ multiplyScalar ()		//This method multiply the scalar with the matrix
   if (scalar < 0)
     {
       cout << "Invalid Input\n";
+      return;
     }
   for (i = 0; i < rows; i++)
     {
@@ -308,6 +317,7 @@ divideScalar ()			//This function divide the scalar with the matrix
   if (columns <= 0)
     {
       cout << "Invalid operation\n";
+      return;
     }
   int array[rows][columns];
   for (i = 0; i < rows; i++)
@@ -333,6 +343,7 @@ divideScalar ()			//This function divide the scalar with the matrix
   if (scalar <= 0)
     {
       cout << "Invalid Input\n";
+      return;
     }
   for (i = 0; i < rows; i++)
     {
@@ -366,12 +377,14 @@ matrixAddition ()		//This method add the two matrices
   if (rows <= 0)
     {
       cout << "Invalid number\n";
+      return;
     }
   cout << "Enter the number of columns:\t";
   cin >> columns;		//getting rows and column of first matrix
   if (columns <= 0)
     {
       cout << "Invalid operation\n";
+      return;
     }
   int array[rows][columns];	//array for the first matrix
   for (i = 0; i < rows; i++)
@@ -389,12 +402,14 @@ matrixAddition ()		//This method add the two matrices
   if (rows1 <= 0)
     {
       cout << "Invalid number\n";
+      return;
     }
   cout << "Enter the number of columns for second matrix:\t";	//getting rows and columns for second matrix
   cin >> columns1;
   if (columns1 <= 0)
     {
       cout << "Invalid operation\n";
+      return;
     }
   int array1[rows1][columns1];	//array for the second matrix
   for (i = 0; i < rows1; i++)
@@ -450,6 +465,7 @@ matrixAddition ()		//This method add the two matrices
   else
     {
       cout << "Invalid Input\n";
+      return;
     }
 
 
@@ -470,12 +486,14 @@ matrixSubtraction ()		//This function perform subtraction of two matrices
   if (rows <= 0)
     {
       cout << "Invalid number\n";
+      return;
     }
   cout << "Enter the number of columns:\t";	//getting rows and columns of first matrix
   cin >> columns;
   if (columns <= 0)
     {
       cout << "Invalid operation\n";
+      return;
     }
   int array[rows][columns];	//array for the first matrix
   for (i = 0; i < rows; i++)
@@ -493,12 +511,14 @@ matrixSubtraction ()		//This function perform subtraction of two matrices
   if (rows1 <= 0)
     {
       cout << "Invalid number\n";
+      return;
     }
   cout << "Enter the number of columns for second matrix:\t";	// ]---  Getting rows and columns of second matrix
   cin >> columns1;
   if (columns1 <= 0)
     {
       cout << "Invalid operation\n";
+      return;
     }
   int array1[rows1][columns1];	//array for the second matrix
   for (i = 0; i < rows1; i++)
@@ -554,6 +574,7 @@ matrixSubtraction ()		//This function perform subtraction of two matrices
   else
     {
       cout << "Invalid Input\n";
+      return;
     }
 
 
@@ -570,12 +591,14 @@ transponseMatrix ()		//This method/function finds the transponse of matrix
   if (rows <= 0)
     {
       cout << "Invalid number\n";
+      return;
     }
   cout << "Enter the number of columns:\t";
   cin >> columns;
   if (columns <= 0)		//]----Getting rows and columns of the matrix
     {
       cout << "Invalid operation\n";
+      return;
     }
   int array[rows][columns];
   for (i = 0; i < rows; i++)
@@ -619,7 +642,7 @@ transponseMatrix ()		//This method/function finds the transponse of matrix
 
 }
 
-int
+void
 checkSymmetry ()		//This function checks the symmetry of matrix
 {
   int rows = 0;
@@ -630,12 +653,14 @@ checkSymmetry ()		//This function checks the symmetry of matrix
   if (rows <= 0)
     {
       cout << "Invalid number\n";
+      return;
     }
   cout << "Enter the number of columns:\t";	//]---Getting the rows and columns 
   cin >> columns;
   if (columns <= 0)
     {
       cout << "Invalid operation\n";
+      return;
     }
   int array[rows][columns];
   for (i = 0; i < rows; i++)
@@ -682,7 +707,7 @@ checkSymmetry ()		//This function checks the symmetry of matrix
 	  if (array[i][j] != transpose[i][j])	//comparing the matrix with its transponse
 	    {
 	      cout << "It is not a symmetric matrix.\n";
-	      return 0;
+	      return;
 	    }
 	}
 
@@ -692,7 +717,7 @@ checkSymmetry ()		//This function checks the symmetry of matrix
 
 }
 
-int
+void
 checkEquality ()		//This function checks the equality of matrices
 {
   int rows = 0;
@@ -704,12 +729,14 @@ checkEquality ()		//This function checks the equality of matrices
   if (rows <= 0)
     {
       cout << "Invalid number\n";
+      return;
     }
   cout << "Enter the number of columns:\t";
   cin >> columns;		//Getting the rows and columns of first matrix
   if (columns <= 0)
     {
       cout << "Invalid operation\n";
+      return;
     }
   int array[rows][columns];
   for (i = 0; i < rows; i++)
@@ -727,12 +754,14 @@ checkEquality ()		//This function checks the equality of matrices
   if (rows1 <= 0)
     {
       cout << "Invalid number\n";
+      return;
     }
   cout << "Enter the number of columns for second matrix:\t";
   cin >> columns1;		//Getting rows and columns for second matrix
   if (columns1 <= 0)
     {
       cout << "Invalid operation\n";
+      return;
     }
   int array1[rows1][columns1];
   for (i = 0; i < rows1; i++)
@@ -770,7 +799,7 @@ checkEquality ()		//This function checks the equality of matrices
 	  if (array[i][j] != array1[i][j])	//comparing the both matrices
 	    {
 	      cout << "Matrices are not equal.\n";
-	      return 0;
+	      return ;
 	    }
 	}
 
@@ -781,7 +810,7 @@ checkEquality ()		//This function checks the equality of matrices
 
 }
 
-int
+void
 checkIdentity ()		//This method checks whether the matrix is identitiy or not
 {
   int rows = 0;
@@ -793,12 +822,14 @@ checkIdentity ()		//This method checks whether the matrix is identitiy or not
   if (rows <= 0)
     {
       cout << "Invalid number\n";
+      return;
     }
   cout << "Enter the number of columns:\t";	//Getting the rows and columns of matrix
   cin >> columns;
   if (columns <= 0)
     {
       cout << "Invalid operation\n";
+      return;
     }
   int array[rows][columns];
   for (i = 0; i < rows; i++)
@@ -843,7 +874,7 @@ checkIdentity ()		//This method checks whether the matrix is identitiy or not
 	  if (array[i][j] != identity[i][j])	//comparing the matrix given by the user with the sample identity matrix
 	    {
 	      cout << "It is not an identity matrix\n";
-	      return 0;
+	      return ;
 	    }
 	}
     }
@@ -851,7 +882,7 @@ checkIdentity ()		//This method checks whether the matrix is identitiy or not
 
 }
 
-int
+void
 matrixMultiplication ()		//this function find the product of two matrices
 {
   int rows = 0;
@@ -864,12 +895,14 @@ matrixMultiplication ()		//this function find the product of two matrices
   if (rows <= 0)
     {
       cout << "Invalid number\n";
+      return;
     }
   cout << "Enter the number of columns:\t";
   cin >> columns;		//]------Getting the rows and columns of first matrix
   if (columns <= 0)
     {
       cout << "Invalid operation\n";
+      return;
     }
   int array[rows][columns];
   for (i = 0; i < rows; i++)
@@ -887,12 +920,14 @@ matrixMultiplication ()		//this function find the product of two matrices
   if (rows1 <= 0)
     {
       cout << "Invalid number\n";
+      return;
     }
   cout << "Enter the number of columns for second matrix:\t";	//------]--Getting the rows and columns of second matrix
   cin >> columns1;
   if (columns1 <= 0)
     {
       cout << "Invalid operation\n";
+      return;
     }
   int array1[rows1][columns1];
   for (i = 0; i < rows1; i++)
@@ -941,7 +976,7 @@ matrixMultiplication ()		//this function find the product of two matrices
 		  cout << "Can not perform your operation.";
 		  cout <<
 		    "For multiplication of matrices,rows of first matrix must be equal to columns of second matrix.\t";
-		  return 0;
+		   return ;
 		}
 	    }
 
